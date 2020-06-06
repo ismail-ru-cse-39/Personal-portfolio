@@ -519,6 +519,8 @@ body{
 	flex: 0 0 33.33%;
 	max-width: 33.33%;
 	margin-bottom: 30px;
+	display: -ms-flex;
+	display: flex;
 }
 
 .service .service-item .service-item-inner{
@@ -568,4 +570,13 @@ body{
 	color: #504e70;
 	line-height: 25px;
 	margin: 0;
+}
+
+
+/*Portfolio Section*/
+
+.portfolio .portfolio-filter {
+	background-color: red;
+	-ms-flex: 0 0 100%;
+	flex: 0 0 100%;
 }
