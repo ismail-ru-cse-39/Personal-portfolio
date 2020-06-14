@@ -719,6 +719,35 @@ body{
 .lightbox .lightbox-content{
 	position: relative;
 }
+.lightbox.open .lightbox-content{
+	animation: lightboxImage .5s ease;
+}
+
+.lightbox .lightbox-content{
+	position: relative;
+}
+
+@-webkit-keyframes lightboxImage{
+	0%{
+		-webkit-transform: scale(.8);
+		transform: scale(.8);
+	}
+	100%{
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+@keyframes lightboxImage{
+	0%{
+		-webkit-transform: scale(.8);
+		transform: scale(.8);
+	}
+	100%{
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
 .lightbox .lightbox-content .lightbox-close{
 	position: absolute;
 	height: 40px;
