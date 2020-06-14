@@ -694,14 +694,18 @@ body{
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.6);
 	z-index: 100;
-	display: -ms-flex;
-	display: flex;
+	display:none;
 	-ms-flex-align: center;
 	align-items: center;
 	-ms-flex-pack:center;
 	justify-content: center;
 	cursor: zoom-out;
 	padding: 30px;
+}
+
+.lightbox.open{
+	display: -ms-flexbox;
+	display: flex;
 }
 
 .lightbox .lightbox-content img{
@@ -740,4 +744,43 @@ body{
 	font-size: 16px;
 	color: #ffffff;
 	font-weight: 400;
+}
+
+.lightbox .lightbox-controls .prev-item,
+.lightbox .lightbox-controls .next-item{
+	position: absolute;
+	height: 40px;
+	width: 40px;
+	background-color: #ffffff;
+	text-align: center;
+	border-radius: 50%;
+	cursor: pointer;
+	top: 50%;
+	margin-top: -20px;
+	z-index: 110;
+}
+/*.lightbox .lightbox-controls .prev-item:hover,
+.lightbox .lightbox-controls .next-item:hover{
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}*/
+
+.lightbox .lightbox-controls .prev-item:active,
+.lightbox .lightbox-controls .next-item:active{
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.lightbox .lightbox-controls .prev-item{
+	left: 20px;
+}
+
+.lightbox .lightbox-controls .next-item{
+	right: 20px;
+}
+
+.lightbox .lightbox-controls .prev-item .fa,
+.lightbox .lightbox-controls .next-item .fa{
+	font-size: 32px;
+	line-height: 40px;
 }
