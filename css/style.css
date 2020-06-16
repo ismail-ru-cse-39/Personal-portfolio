@@ -817,17 +817,19 @@ body{
 	top: 50%;
 	margin-top: -20px;
 	z-index: 110;
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
 }
-/*.lightbox .lightbox-controls .prev-item:hover,
+
+.lightbox .lightbox-controls .prev-item:hover,
 .lightbox .lightbox-controls .next-item:hover{
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
-}*/
-
+}
 .lightbox .lightbox-controls .prev-item:active,
 .lightbox .lightbox-controls .next-item:active{
-	-webkit-transform: scale(1.1);
-	transform: scale(1.1);
+	-webkit-transform: scale(1);
+	transform: scale(1);
 }
 
 .lightbox .lightbox-controls .prev-item{

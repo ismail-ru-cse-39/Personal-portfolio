@@ -29,3 +29,51 @@ const filterContainer = document.querySelector(".portfolio-filter"),
 		})
 	}
 
+
+
+// portfolio lightbox
+
+const lightbox = document.querySelector(".lightbox"),
+	  lightboxImg = lightbox.querySelector(".lightbox-img"),
+	  lightboxText = lightbox.querySelector(".caption-text"),
+	  lightboxCounter = lightbox.querySelector(".caption-counter");
+
+	let itemIndex = 0;
+
+	for(let i=0; i<totalPortfolioItems; i++) {
+		portfolioItems[i].addEventListener("click", function(){
+			itemIndex = i;
+			changeItem();
+			toggleLightbox();
+		})
+	}
+
+	function nextItem() {
+		if(itemIndex == totalPortfolioItems-1){
+			itemIndex = 0;
+		} else {
+			itemIndex++;
+		}
+
+		changeItem();
+	}
+
+	function prevItem() {
+		if(itemIndex == 0) {
+			itemIndex = totalPortfolioItems-1;
+		} else {
+			itemIndex--;
+		}
+		changeItem();
+	}
+
+	function changeItem(){
+		imgSrc = portfolioItems[itemIndex].querySelector(".portfolio-img img").getAttribute("src");
+		lightboxImg.src = imgSrc;
+		lightboxText.innerHTML = portfolioItems[itemIndex].querySelector("h4").innerHTML;
+		lightboxCounter.innerHTML = (itemIndex + 1) + " of " + totalPortfolioItems;
+	}
+
+	function toggleLightbox() {
+		lightbox.classList.toggle("open");
+	}
