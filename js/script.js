@@ -36,6 +36,7 @@ const filterContainer = document.querySelector(".portfolio-filter"),
 const lightbox = document.querySelector(".lightbox"),
 	  lightboxImg = lightbox.querySelector(".lightbox-img"),
 	  lightboxText = lightbox.querySelector(".caption-text"),
+	  lightboxClose = lightbox.querySelector(".lightbox-close"),
 	  lightboxCounter = lightbox.querySelector(".caption-counter");
 
 	let itemIndex = 0;
@@ -49,7 +50,7 @@ const lightbox = document.querySelector(".lightbox"),
 	}
 
 	function nextItem() {
-		if(itemIndex == totalPortfolioItems-1){
+		if(itemIndex === totalPortfolioItems-1){
 			itemIndex = 0;
 		} else {
 			itemIndex++;
@@ -59,7 +60,7 @@ const lightbox = document.querySelector(".lightbox"),
 	}
 
 	function prevItem() {
-		if(itemIndex == 0) {
+		if(itemIndex === 0) {
 			itemIndex = totalPortfolioItems-1;
 		} else {
 			itemIndex--;
@@ -77,3 +78,11 @@ const lightbox = document.querySelector(".lightbox"),
 	function toggleLightbox() {
 		lightbox.classList.toggle("open");
 	}
+
+	// close lightbox
+	
+	lightbox.addEventListener("click", function(event){
+		if(event.target === lightboxClose || event.target === lightbox) {
+			toggleLightbox();
+		}
+	})
